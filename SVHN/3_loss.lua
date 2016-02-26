@@ -4,12 +4,10 @@
 --   + negative-log likelihood, using log-normalized output units (SoftMax)
 --   + mean-square error
 --   + margin loss (SVM-like)
---
--- Clement Farabet
 ----------------------------------------------------------------------
 
-require 'torch'   -- torch
-require 'nn'      -- provides all sorts of loss functions
+require 'torch'
+require 'nn' 
 
 ----------------------------------------------------------------------
 -- parse command line arguments
