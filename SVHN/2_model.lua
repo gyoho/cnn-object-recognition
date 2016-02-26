@@ -9,13 +9,11 @@
 -- $ th -i 2_model.lua
 -- this will give you a Torch interpreter at the end, that you
 -- can use to play with the model.
---
--- Clement Farabet
 ----------------------------------------------------------------------
 
-require 'torch'   -- torch
-require 'image'   -- for image transforms
-require 'nn'      -- provides all sorts of trainable modules/layers
+require 'torch'   
+require 'image'   
+require 'nn'     
 
 ----------------------------------------------------------------------
 -- parse command line arguments
