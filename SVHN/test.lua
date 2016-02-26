@@ -47,13 +47,12 @@ function test()
       testLogger:style{['% mean class accuracy (test set)'] = '-'}
       testLogger:plot()
    end
-
-   -- averaged param use?
+  
    if average then
       -- restore parameters
       parameters:copy(cachedparams)
-   end
-   
+   end 
+
    -- next iteration:
    confusion:zero()
 end
