@@ -1,23 +1,16 @@
-----------------------------------------------------------------------
 -- This script implements a test procedure, to report accuracy
--- on the test data. Nothing fancy here...
---
--- Clement Farabet
-----------------------------------------------------------------------
 
-require 'torch'   -- torch
-require 'xlua'    -- xlua provides useful tools, like progress bars
-require 'optim'   -- an optimization package, for online and batch methods
+require 'torch'
+require 'xlua'
+require 'optim'
 
-----------------------------------------------------------------------
 print '==> defining test procedure'
 
 -- test function
 function test()
-   -- local vars
    local time = sys.clock()
 
-   -- averaged param use?
+   -- averaged param use
    if average then
       cachedparams = parameters:clone()
       parameters:copy(average)
@@ -43,7 +36,7 @@ function test()
       confusion:add(pred, target)
    end
 
-   -- timing
+   -- time spent
    time = sys.clock() - time
    time = time / testData:size()
    print("\n==> time to test 1 sample = " .. (time*1000) .. 'ms')
