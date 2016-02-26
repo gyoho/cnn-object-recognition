@@ -14,10 +14,7 @@ function test()
    if average then
       cachedparams = parameters:clone()
       parameters:copy(average)
-   end
-
-   -- set model to evaluate mode (for modules that differ in training and testing, like Dropout)
-   model:evaluate()
+   end   
 
    -- test over test data
    print('==> testing on test set:')
