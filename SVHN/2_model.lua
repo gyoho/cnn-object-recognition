@@ -73,7 +73,7 @@ elseif opt.model == 'mlp' then
 elseif opt.model == 'convnet' then
 
    if opt.type == 'cuda' then
-      -- a typical modern convolution network (conv+relu+pool)
+      
       model = nn.Sequential()
 
       -- stage 1 : filter bank -> squashing -> L2 pooling -> normalization
