@@ -9,8 +9,6 @@
 --     model to be trained
 --   + optimize the function, according to several optmization
 --     methods: SGD, L-BFGS.
---
--- Clement Farabet
 ----------------------------------------------------------------------
 
 require 'torch'   -- torch
