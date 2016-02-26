@@ -109,7 +109,7 @@ elseif opt.model == 'convnet' then
       -- stage 1 : filter bank -> squashing -> L2 pooling -> normalization
       model:add(nn.SpatialConvolutionMM(nfeats, nstates[1], filtsize, filtsize))
       model:add(nn.Tanh())
-      model:add(nn.SpatialLPPooling(nstates[1],2,poolsize,poolsize,poolsize,poolsize))
+      model:add(nn.SpatialLPPooling(nstates[1],3,poolsize,poolsize,poolsize,poolsize))
       model:add(nn.SpatialSubtractiveNormalization(nstates[1], normkernel))
 
       -- stage 2 : filter bank -> squashing -> L2 pooling -> normalization
