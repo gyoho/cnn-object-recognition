@@ -1,4 +1,4 @@
-package = "cnn-object-recognition"
+package = "cnn-objrec"
 version = "0.0-1"
 source = {
   url = "git://github.com/gyoho/cnn-object-recognition",
@@ -11,7 +11,7 @@ description = {
 }
 dependencies = {
    "lua >= 5.1",
-   "busted >= 2.0"
+   "busted >= 2.0.rc11-0"
 }
 build = {
    type = "builtin",
