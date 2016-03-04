@@ -1,6 +1,6 @@
 # cnn-object-recognition
 
-Shared Imagenet Code Repo  
+Shared Imagenet Code Repository  
 
 ### Team Members 
 Ankit Devani
