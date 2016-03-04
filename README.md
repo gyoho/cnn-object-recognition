@@ -1,7 +1,8 @@
 # cnn-object-recognition
 
 Shared Imagenet Code Repo 
-Team Members 
+
+### Team Members 
 Ankit Devani
 Rohan Bhanderi
 Hitesh Basantani
