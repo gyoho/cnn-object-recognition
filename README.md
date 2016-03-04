@@ -1,8 +1,9 @@
 # cnn-object-recognition
 
-Shared Imagenet Code Repo 
+Shared Imagenet Code Repository
 
-### Team Members 
+### Team Members
+
 Ankit Devani
 
 Rohan Bhanderi
