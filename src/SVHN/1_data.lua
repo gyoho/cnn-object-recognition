@@ -235,6 +235,3 @@ if opt.visualize then
       print("For visualization, run this script in an itorch notebook")
    end
 end
-
-
-end
