@@ -131,32 +131,6 @@ print '==> preprocessing data'
 trainData.data = trainData.data:float()
 testData.data = testData.data:float()
 
--- Convert all images to YUV
-print '==> preprocessing data: colorspace RGB -> YUV'
-for i = 1,trainData:size() do
-   trainData.data[i] = image.rgb2yuv(trainData.data[i])
-end
-for i = 1,testData:size() do
-   testData.data[i] = image.rgb2yuv(testData.data[i])
-end
-
--- Name channels for convenience
-channels = {'y','u','v'}
-
--- Normalize each channel, and store mean/std
--- per channel. These values are important, as they are part of
--- the trainable parameters. At test time, test data will be normalized
--- using these values.
-print '==> preprocessing data: normalize each feature (channel) globally'
-mean = {}
-std = {}
-for i,channel in ipairs(channels) do
-   -- normalize each channel globally:
-   mean[i] = trainData.data[{ {},i,{},{} }]:mean()
-   std[i] = trainData.data[{ {},i,{},{} }]:std()
-   trainData.data[{ {},i,{},{} }]:add(-mean[i])
-   trainData.data[{ {},i,{},{} }]:div(std[i])
-end
 
 -- Normalize test data, using the training means/stds
 for i,channel in ipairs(channels) do
