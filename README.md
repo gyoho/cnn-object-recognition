@@ -1,12 +1,11 @@
 # cnn-object-recognition
 
-Shared Imagenet Code Repo 
+[![Build Status](http://ganges.engr.sjsu.edu:8080/job/CNN Object Recognition/badge/icon)](http://ganges.engr.sjsu.edu:8080/job/CNN Object Recognition)
 
-### Team Members 
-Ankit Devani
+Contributors
+-------------
 
-Rohan Bhanderi
-
-Hitesh Basantani
-
-Yaopeng Wu
+* Ankit Devani
+* Hitesh Basantani
+* Rohan Bhanderi
+* Yaopeng Wu
