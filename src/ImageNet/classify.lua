@@ -13,11 +13,9 @@ end
 
 print '==> Downloading image and network'
 local image_url = 'http://upload.wikimedia.org/wikipedia/commons/e/e9/Goldfish3.jpg'
-local network_url = 'https://www.dropbox.com/s/npmr5egvjbg7ovb/nin_nobn_final.t7'
+local network_name = '/mnt/neuralShift/trained_model/nin_nobn_final.t7'
 local image_name = paths.basename(image_url)
-local network_name = paths.basename(network_url)
 if not paths.filep(image_name) then os.execute('wget '..image_url)   end
-if not paths.filep(network_name) then os.execute('wget '..network_url)   end
 
 print '==> Loading network'
 local net = torch.load(network_name):unpack():float()
