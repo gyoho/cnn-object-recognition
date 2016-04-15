@@ -35,15 +35,17 @@ function createModel(nGPU)
 
    -- 1.3. Create Classifier (fully connected layers)
    local classifier = nn.Sequential()
-   classifier:add(nn.View(256*6*6))
-   classifier:add(nn.Dropout(0.5))
-   classifier:add(nn.Linear(256*6*6, 4096))
+   classifier:add(nn.View(256*6*6))                         -- Reshape network into 1D tensor
+   classifier:add(nn.Dropout(0.5))                          -- Prevent overfitting
+   classifier:add(nn.Linear(256*6*6, 4096))                 -- Fully connected layer, 9,216 inputs, 4096 outputs
    classifier:add(nn.Threshold(0, 1e-6))
+   
    classifier:add(nn.Dropout(0.5))
    classifier:add(nn.Linear(4096, 4096))
    classifier:add(nn.Threshold(0, 1e-6))
-   classifier:add(nn.Linear(4096, nClasses))
-   classifier:add(nn.LogSoftMax())
+   
+   classifier:add(nn.Linear(4096, nClasses))                -- we have 4096 spots for last vector
+   classifier:add(nn.LogSoftMax())                          -- classify to an appropriate category
    classifier:cuda()
 
    -- 1.4. Combine 1.1 and 1.3 to produce final model
